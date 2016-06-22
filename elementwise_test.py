@@ -4,10 +4,12 @@ from chainer import cuda
 
 def _mul_i():
     return cuda.elementwise(
-            "raw T x", "T y",
-            "y = x[i]*i",
+            "raw T x", "raw T y",
+            """
+                y[i] = x[i]
+            """,
             "muli")
 
-
-o = cupy.ones((3,2))
-print _mul_i()(o)
+o = cupy.ones((3,2,2))
+y = cupy.zeros_like(o)
+print _mul_i()(o,y, size=6)
