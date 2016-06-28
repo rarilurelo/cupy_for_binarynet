@@ -76,7 +76,7 @@ for in_dim in in_dims:
         xnor_time           = 0
         popcount_time       = 0
         
-        for _ in range(1):
+        for _ in range(10000):
             W = cupy.random.rand(out_dim, in_dim)-0.5
             x = cupy.random.rand(in_dim, )-0.5
             
