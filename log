@@ -1,0 +1,5 @@
+binarize_time:                  0.92253446579
+preprocess_time:                  0.69583940506
+preprocess_vec_time:                 0.580882310867
+xnor_time:                 0.500669002533
+popcount_time:                 0.493839263916
