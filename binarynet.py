@@ -138,7 +138,8 @@ logs_name = ['binarize_log', 'preprocess_log', 'preprocess_vec_log', 'xnor_log',
 for i, in_dim in enumerate(in_dims):
     for log, name in zip(logs, logs_name):
         plt.plot(out_dims, log[i], label=name)
-    plt.legend()
+    plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
+    plt.subplots_adjust(right=0.6)
     plt.title("fix in_dim to {0}".format(in_dim))
     plt.xlabel("size")
     plt.ylabel("time")
@@ -148,6 +149,8 @@ for i, in_dim in enumerate(in_dims):
 for i, out_dim in enumerate(out_dims):
     for log, name in zip(logs, logs_name):
         plt.plot(in_dims, log[:, i], label=name)
+    plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
+    plt.subplots_adjust(right=0.6)
     plt.legend()
     plt.title("fix out_dim to {0}".format(out_dim))
     plt.xlabel("size")
