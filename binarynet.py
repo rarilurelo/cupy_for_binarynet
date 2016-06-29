@@ -76,7 +76,7 @@ for in_dim in in_dims:
         xnor_time           = 0
         popcount_time       = 0
         
-        for _ in range(10000):
+        for _ in range(1):
             W = cupy.random.rand(out_dim, in_dim)-0.5
             x = cupy.random.rand(in_dim, )-0.5
             
@@ -141,7 +141,7 @@ for i, in_dim in enumerate(in_dims):
     plt.legend(loc='upper left', bbox_to_anchor=(1.05, 1), borderaxespad=0)
     plt.subplots_adjust(right=0.6)
     plt.title("fix in_dim to {0}".format(in_dim))
-    plt.xlabel("size")
+    plt.xlabel("out_dim size")
     plt.ylabel("time")
     plt.savefig("fix_in_dim_to_{0}.png".format(in_dim))
     plt.clf()
@@ -153,7 +153,7 @@ for i, out_dim in enumerate(out_dims):
     plt.subplots_adjust(right=0.6)
     plt.legend()
     plt.title("fix out_dim to {0}".format(out_dim))
-    plt.xlabel("size")
+    plt.xlabel("in_dim size")
     plt.ylabel("time")
     plt.savefig("fix_out_dim_to_{0}.png".format(out_dim))
     plt.clf()
